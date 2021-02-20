@@ -1,0 +1,15 @@
+version: '3.2'
+
+services:
+  streamnginx:
+    image: stream-nginx
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+      - "8935:8935"
+      - "1935:1935"
+    volumes:
+      - type: tmpfs
+        target: /tmp
+
